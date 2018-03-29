@@ -32,8 +32,3 @@ def sendEmail(image):
 	smtp.quit()
 
 
-
-
-
-
-
