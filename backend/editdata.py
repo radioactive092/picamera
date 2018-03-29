@@ -1,3 +1,6 @@
+import subprocess
+import shlex
+
 fmailpy=open("../mail.py")
 fmainpy=open("../main.py")
 finputdata=open("inputdata.txt")
@@ -25,3 +28,6 @@ for item in mailpy :
 fmainpy=open("../main.py",'w')
 for item in mainpy :
     fmainpy.write(item+"\n")
+
+
+subprocess.call(shlex.split('./restartprocess.sh'))
