@@ -5,12 +5,8 @@ from flask import Flask, render_template, Response
 from camera import VideoCamera
 import time
 import threading
+email_update_interval = 300
 
-email_update_interval = 600 # sends an email only once in this time interval
-video_camera = VideoCamera(flip=True) # creates a camera object, flip vertically
-object_classifier = cv2.CascadeClassifier("models/fullbody_recognition_model.xml") # an opencv classifier
-
-# App Globals (do not edit)
 app = Flask(__name__)
 last_epoch = 0
 
@@ -47,3 +43,7 @@ if __name__ == '__main__':
     t.daemon = True
     t.start()
     app.run(host='0.0.0.0', debug=False)
+
+
+
+
