@@ -23,10 +23,11 @@ mainpy[8]="email_update_interval = "+inputdata[0]+" # sends an email only once i
 fmailpy=open("../mail.py",'w')
 for item in mailpy :
     fmailpy.write(item+"\n")
+fmailpy.close()
 
 fmainpy=open("../main.py",'w')
 for item in mainpy :
     fmainpy.write(item+"\n")
-
+fmainpy.close()
 
 subprocess.call(shlex.split('../restartprocess.sh'))
