@@ -29,4 +29,4 @@ for item in mainpy :
     fmainpy.write(item+"\n")
 
 
-subprocess.call(shlex.split('./restartprocess.sh'))
+subprocess.call(shlex.split('../restartprocess.sh'))
