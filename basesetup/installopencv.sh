@@ -20,21 +20,21 @@ sudo rm -rf ~/get-pip.py ~/.cache/pip
 echo -e "\n# virtualenv and virtualenvwrapper" >> ~/.bashrc
 echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
-mkvirtualenv cv -p python3
-source ~/.bashrc
-pip install numpy
-cd ~/opencv-3.4.1/
-mkdir build
-cd build
+#source ~/.bashrc
+#mkvirtualenv cv -p python3
+#pip install numpy
+#cd ~/opencv-3.4.1/
+#mkdir build
+#cd build
 
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python -D ENABLE_PRECOMPILED_HEADERS=OFF -D BUILD_EXAMPLES=ON ..
+#cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python -D ENABLE_PRECOMPILED_HEADERS=OFF -D BUILD_EXAMPLES=ON ..
 
-make -j4
-sudo make install
-sudo ldconfig
+#make -j4
+#sudo make install
+#sudo ldconfig
 
-cd /usr/local/lib/python3.5/site-packages/
-sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so
-cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
-ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so
+#cd /usr/local/lib/python3.5/site-packages/
+#sudo mv cv2.cpython-35m-x86_64-linux-gnu.so cv2.so
+#cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
+#ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so
 
