@@ -5,9 +5,10 @@ $semail=$_POST['semail'];
 $passwd=$_POST['passwd'];
 $temail=$_POST['temail'];
 
+//file_put_contents("settingsdata.txt" , $interval . PHP_EOL . $semail . PHP_EOL . $passwd . PHP_EOL . $temail . PHP_EOL);
+
 $mailpy = explode("\n", file_get_contents('mail.py'));
 $mainpy = explode("\n", file_get_contents('main.py'));
-//$inputdata = explode("\n", file_get_contents('inputdata.txt'));
 
 $mailpy[6]="fromEmail = " . "'" . $semail . "'";
 $mailpy[9]="fromEmailPassword = " . "'" . $passwd . "'";
