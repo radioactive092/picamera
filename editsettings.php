@@ -33,5 +33,6 @@ for($i=0;$i<$sizemain;$i++)
     file_put_contents("main.py" , $mainpy[$i] . PHP_EOL, FILE_APPEND);
 }
 
-print ("Settings Updated Successfully");
+print ("Settings Updated Successfully. <br>Wait for the page to redirect...");
+header( "refresh:3;url=index.php" );
 ?>
